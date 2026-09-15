@@ -1,40 +1,40 @@
 import Container from '@/components/Container';
 import SectionHeading from '@/components/SectionHeading';
 import RevealOnScroll from '@/components/RevealOnScroll';
-import { ArrowRightIcon } from '@/components/icons';
 import { marketplaces } from '@/data/whereToBuy';
 
 export default function WhereToBuy() {
   return (
-    <section className="bg-paper py-24">
-      <Container className="flex flex-col gap-10">
+    <section className="bg-paper py-20 md:py-28">
+      <Container className="flex flex-col items-center gap-8">
         <RevealOnScroll>
           <SectionHeading eyebrow="Marketplaces" title="Compre também em" align="center" />
         </RevealOnScroll>
 
-        <RevealOnScroll delayMs={80}>
-          <div className="mx-auto flex max-w-2xl flex-col gap-4 sm:flex-row">
-            {marketplaces.map((store) => (
-              <a
-                key={store.name}
-                href={store.href}
-                title={
-                  store.available
-                    ? `Comprar na ${store.name}`
-                    : `Link da ${store.name} em breve`
-                }
-                className="focus-ring group flex flex-1 items-center justify-between gap-3 rounded-2xl border border-ink/8 bg-paper-off px-6 py-5 transition-colors hover:border-lilac-deep/40"
-              >
-                <span className="font-display text-base font-semibold text-ink">
+        <RevealOnScroll delayMs={60}>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {marketplaces.map((store, index) => (
+              <span key={store.name} className="flex items-center gap-x-10">
+                <a
+                  href={store.href}
+                  title={
+                    store.available
+                      ? `Comprar na ${store.name}`
+                      : `Link da ${store.name} em breve`
+                  }
+                  className="focus-ring text-sm font-medium text-ink transition-colors hover:text-lilac-deep"
+                >
                   {store.name}
-                </span>
-                <ArrowRightIcon className="h-4 w-4 text-ink/40 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-lilac-deep" />
-              </a>
+                </a>
+                {index < marketplaces.length - 1 && (
+                  <span aria-hidden className="h-4 w-px bg-line" />
+                )}
+              </span>
             ))}
           </div>
         </RevealOnScroll>
 
-        <p className="mx-auto max-w-lg text-center text-xs text-ink/40">
+        <p className="text-center text-xs text-ink/35">
           * Links oficiais das lojas serão adicionados assim que os canais
           estiverem publicados.
         </p>

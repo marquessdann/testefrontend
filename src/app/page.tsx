@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import CategoryBar from '@/components/CategoryBar';
 import Footer from '@/components/Footer';
 import Hero from '@/sections/Hero';
 import Categories from '@/sections/Categories';
@@ -16,6 +17,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
+      <CategoryBar />
       <main id="main">
         <Hero />
         <Categories />

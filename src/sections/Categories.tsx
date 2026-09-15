@@ -1,13 +1,13 @@
 import Container from '@/components/Container';
 import SectionHeading from '@/components/SectionHeading';
 import RevealOnScroll from '@/components/RevealOnScroll';
-import CategoryCard from '@/components/CategoryCard';
+import EditorialRow, { EditorialList } from '@/components/EditorialRow';
 import { categories } from '@/data/categories';
 
 export default function Categories() {
   return (
-    <section id="categorias" className="bg-paper py-24">
-      <Container className="flex flex-col gap-14">
+    <section id="categorias" className="bg-paper-off py-20 md:py-28">
+      <Container className="flex flex-col gap-12">
         <RevealOnScroll>
           <SectionHeading
             eyebrow="Categorias"
@@ -16,13 +16,19 @@ export default function Categories() {
           />
         </RevealOnScroll>
 
-        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category, index) => (
-            <RevealOnScroll key={category.slug} as="li" delayMs={index * 60}>
-              <CategoryCard category={category} />
-            </RevealOnScroll>
-          ))}
-        </ul>
+        <RevealOnScroll delayMs={60}>
+          <EditorialList>
+            {categories.map((category, index) => (
+              <EditorialRow
+                key={category.slug}
+                number={String(index + 1).padStart(2, '0')}
+                title={category.name}
+                description={category.description}
+                href="#produtos"
+              />
+            ))}
+          </EditorialList>
+        </RevealOnScroll>
       </Container>
     </section>
   );
