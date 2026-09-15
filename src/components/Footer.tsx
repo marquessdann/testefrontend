@@ -6,7 +6,7 @@ import { marketplaces } from '@/data/whereToBuy';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-ink py-16 text-white/70">
+    <footer className="border-t border-white/10 bg-ink py-14 text-white/70">
       <Container>
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-4">
@@ -28,7 +28,7 @@ export default function Footer() {
                   <li key={item.href}>
                     <a
                       href={item.href}
-                      className="focus-ring rounded-sm text-sm text-white/65 transition-colors hover:text-white"
+                      className="focus-ring rounded-sm text-sm text-white/65 transition-colors hover:text-lilac"
                     >
                       {item.label}
                     </a>
@@ -46,7 +46,7 @@ export default function Footer() {
                 <li key={category.slug}>
                   <a
                     href="#categorias"
-                    className="focus-ring rounded-sm text-sm text-white/65 transition-colors hover:text-white"
+                    className="focus-ring rounded-sm text-sm text-white/65 transition-colors hover:text-lilac"
                   >
                     {category.name}
                   </a>
@@ -64,7 +64,7 @@ export default function Footer() {
                 <li key={store.name}>
                   <a
                     href={store.href}
-                    className="focus-ring rounded-sm text-sm text-white/65 transition-colors hover:text-white"
+                    className="focus-ring rounded-sm text-sm text-white/65 transition-colors hover:text-lilac"
                   >
                     {store.name}
                   </a>

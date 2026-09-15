@@ -1,17 +1,11 @@
 import type { Metadata } from 'next';
-import { Manrope, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
-
-const display = Manrope({
-  subsets: ['latin'],
-  variable: '--font-display',
-  weight: ['500', '600', '700', '800'],
-});
 
 const sans = Inter({
   subsets: ['latin'],
   variable: '--font-sans',
-  weight: ['400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
 });
 
 const siteUrl = 'https://della-distribuidora.vercel.app';
@@ -51,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${display.variable} ${sans.variable}`}>
+    <html lang="pt-BR" className={sans.variable}>
       <body>
         <a
           href="#inicio"

@@ -6,8 +6,8 @@ import { featuredProducts } from '@/data/products';
 
 export default function FeaturedProducts() {
   return (
-    <section id="produtos" className="bg-paper-off py-24">
-      <Container className="flex flex-col gap-14">
+    <section id="produtos" className="bg-paper py-20 md:py-28">
+      <Container className="flex flex-col gap-12">
         <RevealOnScroll>
           <SectionHeading
             eyebrow="Catálogo"

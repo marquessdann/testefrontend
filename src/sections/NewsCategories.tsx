@@ -6,8 +6,8 @@ import { newArrivals } from '@/data/products';
 
 export default function NewsCategories() {
   return (
-    <section className="bg-paper py-24">
-      <Container className="flex flex-col gap-14">
+    <section className="bg-paper py-20 md:py-28">
+      <Container className="flex flex-col gap-12">
         <RevealOnScroll>
           <SectionHeading
             eyebrow="Fique por dentro"
